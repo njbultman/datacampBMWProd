@@ -72,6 +72,9 @@ auto_clean <- function(new_data_df) {
     
   }
   
+  #Drop .outcome
+  new_data_full_model$.outcome <- NULL
+  
   return(new_data_full_model)
   
 }

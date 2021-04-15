@@ -17,7 +17,7 @@
 auto_predict <- function(clean_new_data_df) {
   
   #Load in model
-  model <- readRDS("./Model/rf_model_final.rds")
+  data("rf_model_final")
   
   #Generate predictions
   predictions <- predict.train(model, newdata = clean_new_data_df)
