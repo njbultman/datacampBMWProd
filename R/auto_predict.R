@@ -6,7 +6,7 @@
 #' @return Returns price predictions for new BMW data.
 #' @author Nick Bultman, \email{njbultman74@@gmail.com}, April 2021
 #' @seealso \code{\link{auto_clean}}
-#' @keywords clean
+#' @keywords predict
 #' @import caret
 #' @export
 #' @examples
@@ -20,7 +20,7 @@ auto_predict <- function(clean_new_data_df) {
   data("rf_model_final")
   
   #Generate predictions
-  predictions <- predict.train(model, newdata = clean_new_data_df)
+  predictions <- predict.train(rf_model_final, newdata = clean_new_data_df)
   
   return(predictions)
   

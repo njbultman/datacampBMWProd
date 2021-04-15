@@ -26,4 +26,4 @@ auto_predict(auto_clean(data.frame(model = "5 Series", year = 2018, transmission
 \author{
 Nick Bultman, \email{njbultman74@gmail.com}, April 2021
 }
-\keyword{clean}
+\keyword{predict}
