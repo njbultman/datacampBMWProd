@@ -19,9 +19,19 @@ auto_predict <- function(clean_new_data_df) {
   #Load in model
   data("rf_model_final")
   
-  #Generate predictions
-  predictions <- predict.train(rf_model_final, newdata = clean_new_data_df)
-  
+  predictions <- tryCatch(
+    {
+      #Generate predictions
+      predict.train(rf_model_final, newdata = clean_new_data_df)
+    },
+    error = function(cond) {
+      message("Unable to price data. Did you pass the data frame through the auto_clean function first?")
+      message("Returning NA values as a result of error")
+      message("Original error message below:")
+      message(cond)
+      # Return NA if error
+      return(NA)
+    }
+  )    
   return(predictions)
-  
 }
