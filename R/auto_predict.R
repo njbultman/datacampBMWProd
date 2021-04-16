@@ -7,7 +7,7 @@
 #' @author Nick Bultman, \email{njbultman74@@gmail.com}, April 2021
 #' @seealso \code{\link{auto_clean}}
 #' @keywords predict
-#' @import caret
+#' @importFrom caret predict.train
 #' @export
 #' @examples
 #' auto_predict(auto_clean(data.frame(model = "5 Series", year = 2018, transmission = "Manual", mileage = 50000, fuelType = "Diesel", tax = 100, mpg = 20, engineSize = 2)))

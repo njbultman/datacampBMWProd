@@ -2,9 +2,7 @@
 
 export(auto_clean)
 export(auto_predict)
-import(caret)
 import(dplyr)
-import(fastDummies)
-import(ggplot2)
-import(lattice)
-import(stringr)
+importFrom(caret,predict.train)
+importFrom(fastDummies,dummy_cols)
+importFrom(stringr,str_detect)
