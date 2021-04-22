@@ -17,20 +17,20 @@
 #'
 auto_clean <- function(new_data_df) {
   
-  #Load in model
+  # Load in model
   data("rf_model_final")
   
-  #Load in historical quantiles
+  # Load in historical quantiles
   data("historical_mileage_25_75_quantiles")
   data("historical_mpg_25_75_quantiles")
   
-  #Convert variables to factor
+  # Convert variables to factor
   new_data_df$model <- as.factor(new_data_df$model)
   new_data_df$transmission <- as.factor(new_data_df$transmission)
   new_data_df$fuelType <- as.factor(new_data_df$fuelType)
   new_data_df$year <- as.factor(new_data_df$year)
   
-  #Add categorical variables
+  # Add categorical variables
   new_data_full <- new_data_df %>%
     mutate(model_generic = as.factor(case_when(
       str_detect(model, "Series") == TRUE ~ "Series",
@@ -51,12 +51,12 @@ auto_clean <- function(new_data_df) {
         mpg >= historical_mpg_25_75_quantiles[1] & mpg <= historical_mpg_25_75_quantiles[2] ~ "Medium"
       )))
   
-  #Get dummy variables
+  # Get dummy variables
   new_data_full_model <- dummy_cols(new_data_full, remove_first_dummy = FALSE) %>%
     select_if(is.numeric)
   
-  #Find difference in columns - 
-  #Remove ones that are present in test data only
+  # Find difference in columns - 
+  # Remove ones that are present in test data only
   names_rm <- setdiff(names(new_data_full_model), names(rf_model_final$trainingData))
   
   for (i in names_rm) {
@@ -65,7 +65,7 @@ auto_clean <- function(new_data_df) {
     
   }
   
-  #Add dummies with 0s that are not present in test data only
+  # Add dummies with 0s that are not present in test data only
   names_add <- setdiff(names(rf_model_final$trainingData), names(new_data_full_model))
   
   for (i in names_add) {
@@ -74,7 +74,7 @@ auto_clean <- function(new_data_df) {
     
   }
   
-  #Drop .outcome
+  # Drop .outcome
   new_data_full_model$.outcome <- NULL
   
   return(new_data_full_model)

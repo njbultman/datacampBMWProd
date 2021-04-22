@@ -16,12 +16,12 @@
 #'
 auto_predict <- function(clean_new_data_df) {
   
-  #Load in model
+  # Load in model
   data("rf_model_final")
   
   predictions <- tryCatch(
     {
-      #Generate predictions
+      # Generate predictions
       predict.train(rf_model_final, newdata = clean_new_data_df)
     },
     error = function(cond) {
