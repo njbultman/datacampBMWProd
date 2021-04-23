@@ -38,17 +38,21 @@ auto_clean <- function(new_data_df) {
       str_detect(model, "i") == TRUE ~ "i",
       str_detect(model, "M") == TRUE ~ "M",
       str_detect(model, "Z") == TRUE ~ "Z")),
-      is_auto_semi = ifelse(transmission == "Automatic" | transmission == "Semi-Auto", 1, 0),
-      is_man_semi = ifelse(transmission == "Manual" | transmission == "Semi-Auto", 1, 0),
+      is_auto_semi = ifelse(transmission == "Automatic" | 
+                              transmission == "Semi-Auto", 1, 0),
+      is_man_semi = ifelse(transmission == "Manual" | 
+                             transmission == "Semi-Auto", 1, 0),
       mileage_cat = as.factor(case_when(
         mileage < historical_mileage_25_75_quantiles[1] ~ "Low",
         mileage > historical_mileage_25_75_quantiles[2] ~ "High",
-        mileage >= historical_mileage_25_75_quantiles[1] & mileage <= historical_mileage_25_75_quantiles[2] ~ "Medium"
+        mileage >= historical_mileage_25_75_quantiles[1] & 
+          mileage <= historical_mileage_25_75_quantiles[2] ~ "Medium"
       )),
       mpg_cat = as.factor(case_when(
         mpg < historical_mpg_25_75_quantiles[1] ~ "Low",
         mpg > historical_mpg_25_75_quantiles[2] ~ "High",
-        mpg >= historical_mpg_25_75_quantiles[1] & mpg <= historical_mpg_25_75_quantiles[2] ~ "Medium"
+        mpg >= historical_mpg_25_75_quantiles[1] & 
+          mpg <= historical_mpg_25_75_quantiles[2] ~ "Medium"
       )))
   
   # Get dummy variables

@@ -25,7 +25,7 @@ auto_predict <- function(clean_new_data_df) {
       predict.train(rf_model_final, newdata = clean_new_data_df)
     },
     error = function(cond) {
-      message("Unable to price data. Did you pass the data frame through the auto_clean function first?")
+      message("Pricing failed. Did you pass the data through auto_clean first?")
       message("Returning NA values as a result of error")
       message("Original error message below:")
       message(cond)
