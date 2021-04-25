@@ -11,7 +11,7 @@ test_that("Return a numeric vector", {
                "numeric")
 })
 
-# Unit test to ensure length of the vector returned matches the number of rows in the initial data frame
+# Unit test to ensure vector length matches number of rows in initial data frame
 test_that("Length of vector matches number of rows in initial data frame", {
   expect_equal(length(auto_predict(auto_clean(data.frame(model = "5 Series", 
                                                          year = 2018, 

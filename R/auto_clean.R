@@ -2,7 +2,7 @@
 #'
 #' Returns a modified data frame containing all of the requirements for model prediction. 
 #'
-#' @return Returns the modified data frame containing of of the requirements for model prediction.
+#' @return Returns the modified data frame containing all of the requirements for model prediction.
 #' @author Nick Bultman, \email{njbultman74@@gmail.com}, April 2021
 #' @seealso \code{\link{auto_predict}}
 #' @keywords clean

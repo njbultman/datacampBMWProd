@@ -1,7 +1,7 @@
 #' Generate Price Predictions on New BMW Data
 #'
-#' Generates price predictions on new BMW data using the final model. Note that data frame
-#' must be passed through auto_clean function prior to using the auto_predict function. 
+#' Generates price predictions on new BMW data using the final model. Note that the data frame
+#' must be passed through the auto_clean function prior to using the auto_predict function. 
 #'
 #' @return Returns price predictions for new BMW data.
 #' @author Nick Bultman, \email{njbultman74@@gmail.com}, April 2021

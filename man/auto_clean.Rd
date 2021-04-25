@@ -10,7 +10,7 @@ auto_clean(new_data_df)
 \item{new_data_df}{New data frame with BMW data that you would like cleaned before passing to the auto_predict function.}
 }
 \value{
-Returns the modified data frame containing of of the requirements for model prediction.
+Returns the modified data frame containing all of the requirements for model prediction.
 }
 \description{
 Returns a modified data frame containing all of the requirements for model prediction.

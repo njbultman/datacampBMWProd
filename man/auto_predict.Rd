@@ -13,8 +13,8 @@ auto_predict(clean_new_data_df)
 Returns price predictions for new BMW data.
 }
 \description{
-Generates price predictions on new BMW data using the final model. Note that data frame
-must be passed through auto_clean function prior to using the auto_predict function.
+Generates price predictions on new BMW data using the final model. Note that the data frame
+must be passed through the auto_clean function prior to using the auto_predict function.
 }
 \examples{
 auto_predict(auto_clean(data.frame(model = "5 Series", year = 2018, transmission = "Manual", mileage = 50000, fuelType = "Diesel", tax = 100, mpg = 20, engineSize = 2)))
